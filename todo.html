@@ -2,6 +2,15 @@
 <html lang="en" ng-app='app' ng-controller='ctrl'>
 
 <head>
+    <style>
+        .strikethrough {
+            text-decoration: line-through;
+        }
+
+        .strikethrough-div .archive {
+            display: inline !important;
+        }
+    </style>
     <link rel="shortcut icon" href="favicon.ico"/>
     <meta charset="UTF-8">
     <title>Todo</title>
@@ -17,8 +26,11 @@
 
 <ul>
     <li ng-repeat="i in todos">
-        <input type="checkbox" ng-click="active=!active; checked(i)" value="{{i.id}}" ng-model="i.selected">
-        <span ng-class="{'strikethrough': active}">{{i.description}}</span>
+        <div ng-class="{'strikethrough-div': active}">
+            <input type="checkbox" ng-click="active=!active; checked(i)" value="{{i.id}}" ng-model="i.selected">
+            <span ng-class="{'strikethrough': active}">{{i.description}}</span>
+            <button type="button" class="archive" style="display: none" ng-click="archive(i)">&times;</button>
+        </div>
     </li>
 </ul>
 
