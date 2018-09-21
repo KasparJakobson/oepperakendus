@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='app' ng-controller='ctrl'>
+<head>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <meta charset="UTF-8">
+    <title>Tagasiside</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="menu">
+    <a href="index.html">Avaleht</a>
+    <a href="todo.html">Todo</a>
+    <a href="example.html">Näited</a>
+    <a href="resources.html">Allikad</a>
+    <a href="game.html">Mäng</a>
+    <a href="feedback.html">Tagasiside</a>
+</div>
+
+
+<h1 style=" width: 100%; text-align: right; float: right;">Leht tagasiside jaoks</h1>
+
+<form class="feedback-form">
+    <input placeholder="Sisesta nimi" type="text" name="nimi" required>
+    <input placeholder="Ja siia email" type="email" ng-model="email" name="email" required><br>
+    <br>
+    <textarea placeholder="Mida sa mulle öelda tahad?" rows="4" cols="50"></textarea><br>
+    <button class="feedback-submit" type="submit">Esita</button>
+</form>
+</body>
+</html>

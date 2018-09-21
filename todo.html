@@ -21,14 +21,21 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular-animate.js"></script>
     <script src='todo.js'></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-<a href="index.html">Avaleht</a>
+<div class="menu">
+    <a href="index.html">Avaleht</a>
+    <a href="todo.html">Todo</a>
+    <a href="example.html">Näited</a>
+    <a href="resources.html">Allikad</a>
+    <a href="game.html">Mäng</a>
+    <a href="feedback.html">Tagasiside</a>
+</div>
 
+<h1 style="width: 50%; text-align: center;">Todo</h1>
 <p>{{length}}</p>
-
-<ul>
+<ul class="todo-ul">
     <li ng-repeat="i in todos">
         <div ng-class="{'strikethrough-div': active}">
             <input type="checkbox" ng-click="active=!active; checked(i)" value="{{i.id}}" ng-model="i.selected">
