@@ -4,6 +4,9 @@
     <link rel="shortcut icon" href="favicon.ico"/>
     <meta charset="UTF-8">
     <title>Tagasiside</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular-animate.js"></script>
+    <script src='feedback.js'></script>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
@@ -20,11 +23,11 @@
 <h1 style=" width: 100%; text-align: right; float: right;">Leht tagasiside jaoks</h1>
 
 <form class="feedback-form">
-    <input placeholder="Sisesta nimi" type="text" name="nimi" required>
+    <input placeholder="Sisesta nimi" type="text" ng-model="fullname" name="nimi" required>
     <input placeholder="Ja siia email" type="email" ng-model="email" name="email" required><br>
     <br>
-    <textarea placeholder="Mida sa mulle öelda tahad?" rows="4" cols="50"></textarea><br>
-    <button class="feedback-submit" type="submit">Esita</button>
+    <textarea placeholder="Mida sa mulle öelda tahad?" ng-model="content" rows="4" cols="48"></textarea><br>
+    <button class="feedback-submit" ng-click="insertData(fullname, email, content)" type="submit">Esita</button>
 </form>
 </body>
 </html>
