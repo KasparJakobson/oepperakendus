@@ -1,9 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app='app' ng-controller='ctrl'>
 <head>
+
     <link rel="shortcut icon" href="favicon.ico"/>
     <meta charset="UTF-8">
     <title>Angulari näited</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular-animate.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <script src='example.js'></script>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
@@ -16,10 +21,26 @@
     <a href="feedback.html">Tagasiside</a>
 </div>
 <h1 style="width: 84%; text-align: center;">Angulari näited</h1>
-<button></button>
-<button></button>
-<button></button>
-<button></button>
-<button></button>
+
+<script type="text/ng-template" id="example.html">
+    <h3><a href={{example.link}}>{{example.title}}</a></h3>
+
+    <ul class="exampleLine" ng-repeat="line in example.exampleCode">
+        <li class="exampleLine">{{line}}</li>
+    </ul>
+</script>
+
+<ul class="exampleMenu">
+    <li class="exampleItem"><a class="exampleButton" href="#!/naide1">Näide 1</a></li>
+    <li class="exampleItem"><a class="exampleButton" href="#!/naide2">Näide 2</a></li>
+    <li class="exampleItem"><a class="exampleButton" href="#!/naide3">Näide 3</a></li>
+    <li class="exampleItem"><a class="exampleButton" href="#!/naide4">Näide 4</a></li>
+    <li class="exampleItem"><a class="exampleButton" href="#!/naide5">Näide 5</a></li>
+</ul>
+
+<div class="naide-container">
+    <div class="naide-view" ng-view></div>
+</div>
+
 </body>
 </html>
